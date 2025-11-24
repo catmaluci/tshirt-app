@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./Body.css";
+import "./ProductDetail.css";
 import BoxIcon from "../assets/customize_icon.svg";
 
-const Body = () => {
+const ProductDetail = () => {
   const [selectedColor, setSelectedColor] = useState("Red");
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -201,4 +201,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default ProductDetail;

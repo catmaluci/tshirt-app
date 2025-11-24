@@ -1,5 +1,5 @@
 import Header from '../sections/Header'
-import Body from '../sections/Body'
+import ProductDetail from '../sections/ProductDetail'
 
 
 
@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Body />
+      <ProductDetail />
   
     </div>
   )
