@@ -1,24 +1,61 @@
 import { useState } from "react";
-import "./ProductDetail.css";
-import BoxIcon from "../assets/customize_icon.svg";
+import "./Form.css";
+
 
 const Form = () => {
   const [selectedColor, setSelectedColor] = useState("Red");
+  const [selectedSize, setSelectedSize] = useState("");
+  const [quantity, setQuantity] = useState(0);
+  const [showSizeModal, setShowSizeModal] = useState(false);
 
+  const productId = "1";
+  const productPrice = 20.0;
+  const currencySymbol = "€";
 
+  const sizes = ["S", "M", "L", "XL", "2XL", "3XL", "4XL"];
 
-  const productPrice = "20.00"; 
- 
-  const currencySymbol = "€"; 
+  const handleQuantityChange = (size, change) => {
+    if (selectedSize !== size) {
+      setSelectedSize(size);
+      setQuantity(change > 0 ? 1 : 0);
+    } else {
+      const newQuantity = quantity + change;
+      if (newQuantity >= 0) {
+        setQuantity(newQuantity);
+        if (newQuantity === 0) {
+          setSelectedSize("");
+        }
+      }
+    }
+  };
 
+  const calculateTotal = () => {
+    const subtotal = productPrice * quantity;
+    return subtotal.toFixed(2);
+  };
+
+  const handleAddToCart = () => {
+    if (selectedSize && quantity > 0) {
+      const cartItem = {
+        product_id: productId,
+        color_name: selectedColor,
+        size: selectedSize,
+        quantity: quantity,
+        total: calculateTotal(),
+      };
+      console.log("Adding to cart:", cartItem);
+      
+    } else {
+      alert("Please select a size and quantity");
+    }
+  };
 
   return (
     <div className="product-container">
       <div className="product-header">
         <h1 className="product-title">Customize your Awesome Tshirt</h1>
         <p className="product-subtitle">Adult T-Shirt</p>
-
-       </div>
+      </div>
 
       <div className="product-image-container">
         <img
@@ -28,68 +65,79 @@ const Form = () => {
         />
       </div>
 
-      <div className="product-details">
-        <div className="size-stock">
-          <p className="sizes">
-            Sizes: <strong>S - 4XL</strong>
-          </p>
-          <p className="stock">
-            Stock: <span>22</span>
-          </p>
+      <div className="size-selection-form">
+        <div className="form-header">
+          <h2 className="form-title">Select Size</h2>
         </div>
 
-        <div className="color-section">
-          <p className="color-label">
-            <strong>Color:</strong> <span>{selectedColor}</span>
-          </p>
+        <div className="sizes-list">
+          {sizes.map((size) => (
+            <div key={size} className="size-row">
+              <span className="size-label">{size}</span>
+              <div className="quantity-controls">
+                <button
+                  className="quantity-btn"
+                  onClick={() => handleQuantityChange(size, -1)}
+                  disabled={selectedSize !== size || quantity === 0}
+                >
+                  −
+                </button>
+                <span className="quantity-display">
+                  {selectedSize === size ? quantity : 0}
+                </span>
+                <button
+                  className="quantity-btn"
+                  onClick={() => handleQuantityChange(size, 1)}
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
 
-          <div className="search-box">
-            <input
-              type="text"
-              placeholder="Search colors..."
-              className="search-input"
-            />
-            <svg
-              className="search-icon"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+       
+
+        <div className="order-summary">
+          <p className="product-name">Awesome Tshirt </p>
+          
+          <div className="summary-row">
+            <span className="summary-label">Product ID:</span>
+            <span className="summary-value">{productId}</span>
+          </div>
+
+          <div className="summary-row">
+            <span className="summary-label">Color:</span>
+            <span className="summary-value">{selectedColor}</span>
+          </div>
+          
+
+          {quantity > 0 && (
+            <div className="summary-row">
+              <span className="summary-label">{quantity} Items selected</span>
+            </div>
+          )}
+
+          <div className="total-row">
+            <span className="total-label">Total:</span>
+            <span className="total-value">
+              {currencySymbol} {calculateTotal()}
+            </span>
           </div>
 
          
-          
-         
-          <p className="product-price"> 
-            Price: <strong>{productPrice} {currencySymbol}</strong> 
-          </p>
-      
-          
         </div>
-      </div>
 
-      <div className="product-footer">
-        <p className="footer-text">
-          <strong>Awesome Tshirt </strong> - Adult T-Shirt
-        </p>
-        <button className="customize-button">
-          <img
-            src={BoxIcon}
-            alt="Customize Box Icon"
-            className="button-icon"
-            style={{ width: "24px", height: "24px" }}
-          />
-          Customize
+        <button className="add-to-cart-button" onClick={handleAddToCart}>
+          Add to Cart
         </button>
       </div>
-    </div>
+
+      
+        </div> 
+
+      
+    
   );
 };
 
