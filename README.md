@@ -1,47 +1,8 @@
-## Project Overview
+# React + Vite
 
-Welcome to the React Frontend Interview Challenge! This repository contains a basic, pre-configured Create React App environment.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-The goal is to implement the functionality described in The Challenge section below. Focus on code quality, state management, component architecture, and adherence to modern React best practices.
+Currently, two official plugins are available:
 
-## 🚀 Getting Started
-
-Follow these steps to set up and run the project locally.
-
-## - Prerequisites
-
-You will need the following software installed on your machine:
-
-Node.js (LTS version recommended, e.g., v18 or v20)
-
-npm 
-
-## Installation
-Clone the repository:
- 
- ```bash
-git clone git@github.com:catmaluci/tshirt-app.git
-  ```
-
-Install the dependencies:
-
- ```bash
-npm install
-```
-Run the project in development mode:
-
- ```bash
-npm run dev
-```
-Open your browser and access:
- ```bash
-http://localhost:5173
-```
-## **👥 Develop by**
-Mariuxi Olaya
-<a href="https://www.linkedin.com/in/molaya">LinkedIn</a> 
-<a href="https://www.mariuxy.com">Portfolio</a> 
-
-
-
-
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
