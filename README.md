@@ -8,13 +8,6 @@ The goal is to implement the functionality described in The Challenge section be
 
 Follow these steps to set up and run the project locally.
 
-## - Prerequisites
-
-You will need the following software installed on your machine:
-
-Node.js (LTS version recommended, e.g., v18 or v20)
-
-npm 
 
 ## Installation
 Clone the repository:
