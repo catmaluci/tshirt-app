@@ -84,8 +84,7 @@ const Form = () => {
       } catch (error) {
         console.error("❌ Fetch error:", error);
         alert(
-          "Network error. Could not connect to the service.\n" +
-            "Please check your internet connection."
+          "Network error.\n"
         );
       }
     } else {
