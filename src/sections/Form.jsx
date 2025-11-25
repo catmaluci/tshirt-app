@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./Form.css";
 
@@ -9,12 +9,11 @@ const Form = () => {
   const colorFromUrl = queryParams.get("colorName") || "Red";
   const productIdFromUrl = queryParams.get("productId") || "1";
 
-  const [selectedColor, setSelectedColor] = useState(colorFromUrl);
+  const [selectedColor] = useState(colorFromUrl);
   const [selectedSize, setSelectedSize] = useState("");
   const [quantity, setQuantity] = useState(0);
-  const [showSizeModal, setShowSizeModal] = useState(false);
 
-const productId = productIdFromUrl;
+  const productId = productIdFromUrl;
   const productPrice = 20.0;
   const currencySymbol = "€";
 
@@ -40,7 +39,7 @@ const productId = productIdFromUrl;
     return subtotal.toFixed(2);
   };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     if (selectedSize && quantity > 0) {
       const cartItem = {
         product_id: productId,
@@ -49,7 +48,23 @@ const productId = productIdFromUrl;
         quantity: quantity,
         total: calculateTotal(),
       };
-      console.log("Adding to cart:", cartItem);
+
+      const backendUrl = new URL("http://www.example.com/jsonservice");
+      backendUrl.searchParams.append("product_id", cartItem.product_id);
+      backendUrl.searchParams.append("product_color_name", cartItem.color_name);
+      backendUrl.searchParams.append("custom_product_size", cartItem.size);
+      backendUrl.searchParams.append(
+        "custom_product_quantity",
+        cartItem.quantity
+      );
+
+      console.log("URL to send:", backendUrl.toString());
+      console.log("Cart item:", cartItem);
+
+      alert(
+        `Product SUCCESSFULLY added. Total: ${currencySymbol} ${cartItem.total}`
+      );
+      console.log("Data would be sent to:", backendUrl.toString());
     } else {
       alert("Please select a size and quantity");
     }
@@ -58,7 +73,7 @@ const productId = productIdFromUrl;
   return (
     <div className="product-container">
       <div className="product-header">
-        <h1 className="product-title">Customize your Awesome Tshirt</h1>
+        <h1 className="product-title">Customize your Awesome T-shirt</h1>
         <p className="product-subtitle">Adult T-Shirt</p>
       </div>
 

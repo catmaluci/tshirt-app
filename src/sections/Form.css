@@ -72,35 +72,12 @@
   transition: color 0.2s ease;
 }
 
-.quantity-btn:hover:not(:disabled) {
-  color: #374151;
-}
-
-.quantity-btn:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
 .quantity-display {
   min-width: 2rem;
   text-align: center;
   font-size: 1rem;
   font-weight: 500;
   color: #374151;
-}
-
-/* Size Table Link */
-.size-table-link {
-  display: inline-block;
-  color: #2563eb;
-  text-decoration: none;
-  font-size: 0.875rem;
-  margin-bottom: 1.25rem;
-  font-weight: 500;
-}
-
-.size-table-link:hover {
-  color: #1d4ed8;
 }
 
 /* Order Summary */

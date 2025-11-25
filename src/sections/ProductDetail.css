@@ -40,37 +40,6 @@
   color: #6b7280 !important;
 }
 
-
-.action-icons {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-
-.icon-button {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  border: 1px solid #e5e7eb;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.icon-button:hover {
-  background-color: #f3f4f6;
-  border-color: #d1d5db;
-}
-
-.icon-button .icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  color: #6b7280;
-}
-
 /* --- Image Section --- */
 
 .product-image-container {
@@ -84,26 +53,6 @@
   height: auto;
   border-radius: 0.5rem;
   background-color: #f9fafb;
-}
-
-.image-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.indicator {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: #d1d5db;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.indicator.active {
-  background-color: #2563eb;
 }
 
 /* --- Details Section (Sizes, Stock, Price, Colors) --- */
@@ -174,36 +123,6 @@
 .color-label span {
   color: #6b7280;
   font-weight: 600;
-}
-
-.search-box {
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-.search-input {
-  width: 100%;
-  padding: 0.625rem 2.5rem 0.625rem 1rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
-  outline: none;
-  transition: border-color 0.2s ease;
-}
-
-.search-input:focus {
-  border-color: #2563eb;
-}
-
-.search-icon {
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 1.25rem;
-  height: 1.25rem;
-  color: #2563eb;
-  pointer-events: none;
 }
 
 .color-options {
