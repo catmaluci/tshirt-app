@@ -69,7 +69,7 @@ const Form = () => {
           console.log("✅ Backend response (Success):", result);
 
           alert(
-            `Product SUCCESSFULLY added to cart!\n\n` +
+            `Product SUCCESSFULLY added to cart\n\n` +
               `Size: ${cartItem.size}\n` +
               `Quantity: ${cartItem.quantity}\n` +
               `Total: ${currencySymbol} ${cartItem.total}\n\n`
@@ -97,11 +97,11 @@ const Form = () => {
     <div className="product-container">
       <div className="product-header">
         <h1 className="product-title">Customize your Awesome T-shirt</h1>
-        <p className="product-subtitle">Adult T-Shirt</p>
+        <p className="product-subtitle">Adult T-shirt</p>
       </div>
 
       <div className="product-image-container">
-        <img src={Tshirt} alt="Awesome T-Shirt" className="product-image" />
+        <img src={Tshirt} alt="Awesome T-shirt" className="product-image" />
       </div>
 
       <div className="size-selection-form">
