@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "./Form.css";
+import Tshirt from "../assets/tshirt.webp";
 
 const Form = () => {
   const location = useLocation();
@@ -78,11 +79,7 @@ const Form = () => {
       </div>
 
       <div className="product-image-container">
-        <img
-          src="/src/assets/tshirt.webp"
-          alt="Awesome T-Shirt"
-          className="product-image"
-        />
+        <img src={Tshirt} alt="Awesome T-Shirt" className="product-image" />
       </div>
 
       <div className="size-selection-form">
