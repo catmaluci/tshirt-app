@@ -2,9 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ProductDetail.css";
 import BoxIcon from "../assets/customize_icon.svg";
-import Tshirt from '../assets/tshirt.webp';
-
-
+import Tshirt from "../assets/tshirt.webp";
 
 const ProductDetail = () => {
   const navigate = useNavigate();
@@ -14,13 +12,6 @@ const ProductDetail = () => {
   const productId = "1";
   const productPrice = "20.00";
   const currencySymbol = "€";
-
-  const colors = [
-    { name: "Red", hex: "#f80303" },
-    { name: "Blue", hex: "#2f00ff" },
-    { name: "Orange", hex: "#f5511a" },
-    { name: "Black", hex: "#000000" },
-  ];
 
   const handleCustomizeClick = () => {
     const queryParams = new URLSearchParams({
@@ -34,8 +25,8 @@ const ProductDetail = () => {
   return (
     <div className="product-container">
       <div className="product-header">
-        <h1 className="product-title">Awesome Tshirt</h1>
-        <p className="product-subtitle">Adult T-Shirt</p>
+        <h1 className="product-title">Awesome T-shirt</h1>
+        <p className="product-subtitle">Adult T-shirt</p>
 
         <div className="product-info">
           <p className="product-brand">Gildan® Hammer®</p>
@@ -48,10 +39,7 @@ const ProductDetail = () => {
       </div>
 
       <div className="product-image-container">
-         <img src={Tshirt} 
-          alt="Awesome T-Shirt"
-          className="product-image"
-        />
+        <img src={Tshirt} alt="Awesome T-shirt" className="product-image" />
       </div>
 
       <div className="product-details">
@@ -70,43 +58,79 @@ const ProductDetail = () => {
           </p>
 
           <div className="color-options">
-            {colors.map((color) => (
+          
+            <div
+              key="Red"
+              className={`color-option ${
+                selectedColor === "Red" ? "selected" : ""
+              }`}
+              onClick={() => setSelectedColor("Red")}
+            >
               <div
-                key={color.name}
-                className={`color-option ${
-                  selectedColor === color.name ? "selected" : ""
-                }`}
-                onClick={() => setSelectedColor(color.name)}
+                className="color-circle"
+                style={{ backgroundColor: "#f80303" }}
               >
-                <div
-                  className="color-circle"
-                  style={{ backgroundColor: color.hex }}
-                >
-                  {selectedColor === color.name && (
-                    <svg
-                      className="check-icon"
-                      fill="none"
-                      stroke="white"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="3"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  )}
-                </div>
-                <span className="color-name">{color.name}</span>
+                {selectedColor === "Red"  }
               </div>
-            ))}
+              <span className="color-name">Red</span>
+            </div>
+
+           
+            <div
+              key="Blue"
+              className={`color-option ${
+                selectedColor === "Blue" ? "selected" : ""
+              }`}
+              onClick={() => setSelectedColor("Blue")}
+            >
+              <div
+                className="color-circle"
+                style={{ backgroundColor: "#2f00ff" }}
+              >
+                {selectedColor === "Blue" }
+              </div>
+              <span className="color-name">Blue</span>
+            </div>
+
+           
+            <div
+              key="Orange"
+              className={`color-option ${
+                selectedColor === "Orange" ? "selected" : ""
+              }`}
+              onClick={() => setSelectedColor("Orange")}
+            >
+              <div
+                className="color-circle"
+                style={{ backgroundColor: "#f5511a" }}
+              >
+                {selectedColor === "Orange" }
+              </div>
+              <span className="color-name">Orange</span>
+            </div>
+
+            
+            <div
+              key="Black"
+              className={`color-option ${
+                selectedColor === "Black" ? "selected" : ""
+              }`}
+              onClick={() => setSelectedColor("Black")}
+            >
+              <div
+                className="color-circle"
+                style={{ backgroundColor: "#000000" }}
+              >
+                {selectedColor === "Black"}
+              </div>
+              <span className="color-name">Black</span>
+            </div>
           </div>
 
           <p className="product-price">
             Price:{" "}
             <strong>
-              {productPrice} {currencySymbol}
+             {currencySymbol} {productPrice} 
             </strong>
           </p>
         </div>
@@ -114,7 +138,7 @@ const ProductDetail = () => {
 
       <div className="product-footer">
         <p className="footer-text">
-          <strong>Awesome Tshirt </strong> - Adult T-Shirt
+          <strong>Awesome T-shirt </strong> - Adult T-shirt
         </p>
         <button className="customize-button" onClick={handleCustomizeClick}>
           <img

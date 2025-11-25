@@ -14,4 +14,4 @@ function CustomizeForm() {
   )
 }
 
-export default CustomizeForm
+export default CustomizeForm;
