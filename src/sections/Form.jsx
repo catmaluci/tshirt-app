@@ -1,14 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "./Form.css";
 
-
 const Form = () => {
-  const [selectedColor, setSelectedColor] = useState("Red");
+  const location = useLocation();
+
+  const queryParams = new URLSearchParams(location.search);
+  const colorFromUrl = queryParams.get("colorName") || "Red";
+  const productIdFromUrl = queryParams.get("productId") || "1";
+
+  const [selectedColor, setSelectedColor] = useState(colorFromUrl);
   const [selectedSize, setSelectedSize] = useState("");
   const [quantity, setQuantity] = useState(0);
   const [showSizeModal, setShowSizeModal] = useState(false);
 
-  const productId = "1";
+const productId = productIdFromUrl;
   const productPrice = 20.0;
   const currencySymbol = "€";
 
@@ -44,7 +50,6 @@ const Form = () => {
         total: calculateTotal(),
       };
       console.log("Adding to cart:", cartItem);
-      
     } else {
       alert("Please select a size and quantity");
     }
@@ -96,11 +101,9 @@ const Form = () => {
           ))}
         </div>
 
-       
-
         <div className="order-summary">
           <p className="product-name">Awesome Tshirt </p>
-          
+
           <div className="summary-row">
             <span className="summary-label">Product ID:</span>
             <span className="summary-value">{productId}</span>
@@ -110,7 +113,6 @@ const Form = () => {
             <span className="summary-label">Color:</span>
             <span className="summary-value">{selectedColor}</span>
           </div>
-          
 
           {quantity > 0 && (
             <div className="summary-row">
@@ -124,20 +126,13 @@ const Form = () => {
               {currencySymbol} {calculateTotal()}
             </span>
           </div>
-
-         
         </div>
 
         <button className="add-to-cart-button" onClick={handleAddToCart}>
           Add to Cart
         </button>
       </div>
-
-      
-        </div> 
-
-      
-    
+    </div>
   );
 };
 
