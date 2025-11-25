@@ -19,10 +19,18 @@ const ProductDetail = () => {
     { name: "Orange", hex: "#f5511a" },
     { name: "Black", hex: "#000000" },
   ];
-  
+
   const handleCustomizeClick = () => {
-    navigate('/CustomizeForm'); 
+ 
+    const queryParams = new URLSearchParams({
+      productId: productId,  
+      colorName: selectedColor,  
+    }).toString();
+
+    
+    navigate(`/CustomizeForm?${queryParams}`); 
   };
+
 
   return (
     <div className="product-container">
