@@ -130,7 +130,7 @@ const ProductDetail = () => {
           <p className="product-price">
             Price:{" "}
             <strong>
-              {productPrice} {currencySymbol}
+             {currencySymbol} {productPrice} 
             </strong>
           </p>
         </div>
