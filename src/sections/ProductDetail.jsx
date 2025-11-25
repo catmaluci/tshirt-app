@@ -47,7 +47,7 @@ const ProductDetail = () => {
           </p>
         </div>
 
-        <div className="action-icons">
+        {/* <div className="action-icons">
           <button className="icon-button" aria-label="Download">
             <svg
               className="icon"
@@ -108,7 +108,7 @@ const ProductDetail = () => {
               />
             </svg>
           </button>
-        </div>
+        </div> */}
       </div>
 
       <div className="product-image-container">
@@ -134,7 +134,7 @@ const ProductDetail = () => {
             <strong>Color:</strong> <span>{selectedColor}</span>
           </p>
 
-          <div className="search-box">
+          {/* <div className="search-box">
             <input
               type="text"
               placeholder="Search colors..."
@@ -153,7 +153,7 @@ const ProductDetail = () => {
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
               />
             </svg>
-          </div>
+          </div> */}
 
           <div className="color-options">
             {colors.map((color) => (
