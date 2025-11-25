@@ -68,7 +68,7 @@ const Header = () => {
         <SearchBar searchOpen={searchOpen} />
       </div>
 
-      {menuOpen && <div className="overlay" onClick={toggleMenu}></div>}
+      {menuOpen && <div onClick={toggleMenu}></div>}
 
       <MobileMenu menuOpen={menuOpen} toggleMenu={toggleMenu} />
     </div>

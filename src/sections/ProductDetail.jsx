@@ -22,22 +22,11 @@ const ProductDetail = () => {
     navigate(`/CustomizeForm?${queryParams}`);
   };
 
-  const CheckIcon = () => (
-    <svg className="check-icon" fill="none" stroke="white" viewBox="0 0 24 24">
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="3"
-        d="M5 13l4 4L19 7"
-      />
-    </svg>
-  );
-
   return (
     <div className="product-container">
       <div className="product-header">
-        <h1 className="product-title">Awesome Tshirt</h1>
-        <p className="product-subtitle">Adult T-Shirt</p>
+        <h1 className="product-title">Awesome T-shirt</h1>
+        <p className="product-subtitle">Adult T-shirt</p>
 
         <div className="product-info">
           <p className="product-brand">Gildan® Hammer®</p>
@@ -50,7 +39,7 @@ const ProductDetail = () => {
       </div>
 
       <div className="product-image-container">
-        <img src={Tshirt} alt="Awesome T-Shirt" className="product-image" />
+        <img src={Tshirt} alt="Awesome T-shirt" className="product-image" />
       </div>
 
       <div className="product-details">
@@ -81,7 +70,7 @@ const ProductDetail = () => {
                 className="color-circle"
                 style={{ backgroundColor: "#f80303" }}
               >
-                {selectedColor === "Red" && <CheckIcon />}
+                {selectedColor === "Red"  }
               </div>
               <span className="color-name">Red</span>
             </div>
@@ -98,7 +87,7 @@ const ProductDetail = () => {
                 className="color-circle"
                 style={{ backgroundColor: "#2f00ff" }}
               >
-                {selectedColor === "Blue" && <CheckIcon />}
+                {selectedColor === "Blue" }
               </div>
               <span className="color-name">Blue</span>
             </div>
@@ -115,7 +104,7 @@ const ProductDetail = () => {
                 className="color-circle"
                 style={{ backgroundColor: "#f5511a" }}
               >
-                {selectedColor === "Orange" && <CheckIcon />}
+                {selectedColor === "Orange" }
               </div>
               <span className="color-name">Orange</span>
             </div>
@@ -132,7 +121,7 @@ const ProductDetail = () => {
                 className="color-circle"
                 style={{ backgroundColor: "#000000" }}
               >
-                {selectedColor === "Black" && <CheckIcon />}
+                {selectedColor === "Black"}
               </div>
               <span className="color-name">Black</span>
             </div>
@@ -149,7 +138,7 @@ const ProductDetail = () => {
 
       <div className="product-footer">
         <p className="footer-text">
-          <strong>Awesome Tshirt </strong> - Adult T-Shirt
+          <strong>Awesome T-shirt </strong> - Adult T-shirt
         </p>
         <button className="customize-button" onClick={handleCustomizeClick}>
           <img

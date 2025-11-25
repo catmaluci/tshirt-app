@@ -1,6 +1,3 @@
-
-import React from 'react';
-
 const SearchBar = ({ searchOpen }) => {
   return (
     <div className={`search-bar ${searchOpen ? 'search-bar-open' : ''}`}>
