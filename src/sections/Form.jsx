@@ -50,24 +50,46 @@ const Form = () => {
         total: calculateTotal(),
       };
 
-      const backendUrl = new URL("http://www.example.com/jsonservice");
-      backendUrl.searchParams.append("product_id", cartItem.product_id);
-      backendUrl.searchParams.append("product_color_name", cartItem.color_name);
-      backendUrl.searchParams.append("custom_product_size", cartItem.size);
-      backendUrl.searchParams.append(
-        "custom_product_quantity",
-        cartItem.quantity
-      );
+      console.log("Sending to cart:", cartItem);
 
-      console.log("URL to send:", backendUrl.toString());
-      console.log("Cart item:", cartItem);
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(cartItem),
+          }
+        );
 
-      alert(
-        `Product SUCCESSFULLY added. Total: ${currencySymbol} ${cartItem.total}`
-      );
-      console.log("Data would be sent to:", backendUrl.toString());
+        if (response.ok) {
+          const result = await response.json();
+          console.log("✅ Backend response (Success):", result);
+
+          alert(
+            `Product SUCCESSFULLY added to cart!\n\n` +
+              `Size: ${cartItem.size}\n` +
+              `Quantity: ${cartItem.quantity}\n` +
+              `Total: ${currencySymbol} ${cartItem.total}\n\n`
+          );
+
+          setQuantity(0);
+          setSelectedSize("");
+        } else {
+          console.error(`❌ Error: ${response.status} ${response.statusText}`);
+          alert("Error adding product to cart. Please try again.");
+        }
+      } catch (error) {
+        console.error("❌ Fetch error:", error);
+        alert(
+          "Network error. Could not connect to the service.\n" +
+            "Please check your internet connection."
+        );
+      }
     } else {
-      alert("Please select a size and quantity");
+      alert("Please select a size and quantity before adding to cart.");
     }
   };
 
@@ -114,7 +136,7 @@ const Form = () => {
         </div>
 
         <div className="order-summary">
-          <p className="product-name">Awesome Tshirt </p>
+          <p className="product-name">Awesome T-shirt </p>
 
           <div className="summary-row">
             <span className="summary-label">Product ID:</span>
