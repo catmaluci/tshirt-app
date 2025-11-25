@@ -1,6 +1,6 @@
 /* Size Selection Form */
 .size-selection-form {
-  background-color: #f9fafb;
+  background-color: var(--color-background-light);
   border-radius: 0.75rem;
   padding: 1.5rem;
   margin: 1.5rem 0;
@@ -17,13 +17,13 @@
 .form-title {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #9ca3af;
+  color: var(--color-text-light);  
   margin: 0;
 }
 
 /* Sizes List */
 .sizes-list {
-  background-color: #ffffff;
+  background-color: var(--color-background-white);  
   border-radius: 0.5rem;
   overflow: hidden;
   margin-bottom: 1rem;
@@ -34,7 +34,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.25rem;
-  border-bottom: 1px dashed #e5e7eb;
+  border-bottom: 1px dashed var(--color-border-light);  
 }
 
 .size-row:last-child {
@@ -44,7 +44,7 @@
 .size-label {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #374151;
+  color: var(--color-text-dark);  
 }
 
 /* Quantity Controls */
@@ -52,8 +52,8 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: #ffffff;
-  border: 1px solid #d1d5db;
+  background-color: var(--color-background-white);  
+  border: 1px solid var(--color-border-medium);  
   border-radius: 1.5rem;
   padding: 0.25rem 0.5rem;
 }
@@ -63,7 +63,7 @@
   height: 2rem;
   border: none;
   background: none;
-  color: #6b7280;
+  color: var(--color-text-medium);  
   font-size: 1.25rem;
   cursor: pointer;
   display: flex;
@@ -77,12 +77,12 @@
   text-align: center;
   font-size: 1rem;
   font-weight: 500;
-  color: #374151;
+  color: var(--color-text-dark);  
 }
 
 /* Order Summary */
 .order-summary {
-  background-color: #ffffff;
+  background-color: var(--color-background-white);  
   border-radius: 0.5rem;
   padding: 1.25rem;
   margin-bottom: 1rem;
@@ -91,7 +91,7 @@
 .product-name {
   font-size: 1rem;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--color-text-medium);  
   margin: 0 0 1rem 0;
 }
 
@@ -104,22 +104,22 @@
 
 .summary-label {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: var(--color-text-medium);  
 }
 
 .summary-value {
   font-size: 0.875rem;
-  color: #374151;
+  color: var(--color-text-dark);  
   font-weight: 500;
 }
 
 .discount-row {
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--color-border-light);  
 }
 
 .discount-value {
-  color: #2563eb;
+  color: var(--color-primary); 
   font-weight: 600;
 }
 
@@ -133,18 +133,18 @@
 .total-label {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #2563eb;
+  color: var(--color-primary);  
 }
 
 .total-value {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #2563eb;
+  color: var(--color-primary);  
 }
 
 .printing-costs {
   font-size: 0.875rem;
-  color: #9ca3af;
+  color: var(--color-text-light);  
   margin: 0;
 }
 
@@ -152,8 +152,8 @@
 .add-to-cart-button {
   width: 100%;
   padding: 1rem;
-    background-color: #2563eb;
-  color: #ffffff;
+  background-color: var(--color-primary);  
+  color: var(--color-background-white);  
   border: none;
   border-radius: 0.75rem;
   font-size: 1.125rem;
@@ -163,9 +163,9 @@
 }
 
 .add-to-cart-button:hover {
-   background-color: #1d4ed8;
+   background-color: var(--color-primary-hover);  
 }
 
 .add-to-cart-button:active {
-    background-color: #0d225a;
+    background-color: var(--color-primary-active);  
 }

@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities
+@tailwind utilities;
+
+
+:root {
+ 
+  --color-primary: #2563eb;          
+  --color-primary-hover: #1d4ed8;    
+  --color-primary-active: #0d225a;   
+  
+  /* --- Text --- */
+  --color-text-dark: #374151;        
+  --color-text-medium: #6b7280;      
+  --color-text-light: #9ca3af;       
+  
+  /* --- Backgrounds --- */
+  --color-background-light: #f9fafb;     
+  --color-background-white: #ffffff;     
+  --color-background-selected: #eff6ff;  
+  
+  /* --- Borders --- */
+  --color-border-light: #e5e7eb;     
+  --color-border-medium: #d1d5db;    
+}
