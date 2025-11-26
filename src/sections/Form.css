@@ -169,3 +169,74 @@
 .add-to-cart-button:active {
     background-color: var(--color-primary-active);  
 }
+
+/* Image Upload */
+.product-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.custom-image-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 30%;
+  max-height: 30%;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Image Buttons */
+.image-upload-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.upload-button {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.remove-image-button {
+  background-color: var(--color-warning);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.image-filename {
+  width: 100%;
+  text-align: center;
+  margin: 5px 0;
+  font-size: 0.875rem;
+  color: var(--color-text-medium);
+}
